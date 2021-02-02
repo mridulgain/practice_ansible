@@ -19,5 +19,5 @@ $ docker exec -it ansible-node-1 ip a
   * Add the IP address in managed hosts file (i.e /etc/ansible/hosts) at the controller
 3. Verify the set up. On the controller run
 ```
-$ ansible all -m ping.
+$ ansible all -m ping
 ```

@@ -1,6 +1,5 @@
 # ansible-nodes
 FROM ubuntu
-
 RUN apt-get update && \
 apt-get install -y iproute2 ssh iputils-ping vim-tiny ansible && \
 mkdir /var/run/sshd && \
@@ -10,4 +9,5 @@ RUN mkdir .ssh/
 COPY keys/id_* .ssh/
 RUN cp .ssh/id_rsa.pub .ssh/authorized_keys
 EXPOSE 22
-
+ENTRYPOINT ["/usr/sbin/sshd"]
+CMD ["-D"]
